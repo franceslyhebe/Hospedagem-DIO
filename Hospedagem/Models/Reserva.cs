@@ -51,7 +51,7 @@ namespace Hospedagem.Models
             // TODO: Retorna o valor da diária
             // Cálculo: DiasReservados X Suite.ValorDiaria
             // *IMPLEMENTE AQUI*
-
+            int desconto = 0;
             decimal valorDiaria = Suite.ValorDiaria;
             decimal valor = DiasReservados * valorDiaria;
 
@@ -59,9 +59,8 @@ namespace Hospedagem.Models
             // *IMPLEMENTE AQUI*
             if (DiasReservados >= 10)
             {
-                decimal desconto = 0.10M;
-                decimal reajuste = (desconto * valorDiaria) + valorDiaria;
-                return valor = reajuste * DiasReservados;
+                desconto = Convert.ToInt32(valor * 10 / 100);
+                valor -= desconto;
             }
 
             return valor;
